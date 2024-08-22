@@ -8,7 +8,7 @@ export const connectToDatabase = async () => {
 	if (!process.env.MONGODB_URL) return console.log('MISSING MONGODB_URL')
 
 	if (isConnected) {
-		return console.log('Mogo db is already connected')
+		return console.log('Mogo db is already connected congrets')
 	}
 
 	try {
