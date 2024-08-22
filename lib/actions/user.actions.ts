@@ -27,7 +27,6 @@ export async function getUserById(params: any) {
 export async function createUser(userData: CreateUserParams) {
 	try {
 		connectToDatabase()
-
 		const newUser = await User.create(userData)
 
 		return newUser
@@ -66,9 +65,9 @@ export async function deleteUser(params: DeleteUserParams) {
 			throw new Error('User not found')
 		}
 
-		const userQuestionIds = await Question.find({ author: user._id }).distinct(
-			'_id'
-		)
+		// const userQuestionIds = await Question.find({ author: user._id }).distinct(
+		// 	'_id'
+		// )
 
 		await Question.deleteMany({ author: user._id })
 
